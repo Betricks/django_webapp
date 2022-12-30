@@ -1,0 +1,12 @@
+{% include "Blogs/navbar.html" %}
+<h1>Posting</h1>
+
+<div>
+    <form action="" method="post">
+    {%csrf_token%}
+        <p>{{form.label}}</p>
+        <p>{{form}}</p>
+    <button type="submit">post</button>
+    <a href="{% url 'home' %}">cancel</a>
+    </form>
+</div>

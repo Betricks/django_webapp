@@ -1,0 +1,15 @@
+{% include "Blogs/navbar.html" %}
+{% block title %}
+    <h5>Profile edit</h5>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" class="ui form">
+    {%csrf_token%}
+        {% for form in forms %}
+            <p>{{form.label}}</p>
+            <p>{{form}}</p>
+        {% endfor %} 
+        <button type="submit" class="ui button positive">change</button>
+    </form>
+{% endblock %}

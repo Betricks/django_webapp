@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styleup.css' %}">
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <h2>Sign Up</h2>
+            <div class="inputBox">
+                {{forms.email}}
+                <span>Email</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                {{forms.username}}
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                {{forms.password1}}
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                {{forms.password2}}
+                <span>Password (again)</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="">Forget Password</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+            <input type="submit">
+        </form>
+        </div>
+
+    </div>
+</body>
+</html>

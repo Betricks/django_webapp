@@ -1,0 +1,11 @@
+{% include "Blogs/navbar.html" %}
+<div>
+	<form method="post">
+	{% csrf_token %}
+		{% for form in forms %}
+			{{form.label}}
+			<p>{{form}}</p>
+		{% endfor %}
+		<button type="submit">Submit</button>
+	</form>
+</div>
